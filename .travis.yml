@@ -17,7 +17,14 @@ install: |
   ./node_modules/.bin/jsvu --os=linux64 --engines=chakra,javascriptcore,spidermonkey,v8,xs
   
 
-  #npm install --ignore-scripts
+  npm install --ignore-scripts
+
+  ./node_modules/.bin/eshost --add 'chakra' ch ~/.jsvu/chakra
+  ./node_modules/.bin/eshost --add 'engine262' engine262 
+  ./node_modules/.bin/eshost --add 'javascriptcore' jsc ~/.jsvu/javascriptcore
+  ./node_modules/.bin/eshost --add 'spidermonkey' jsshell ~/.jsvu/spidermonkey
+  ./node_modules/.bin/eshost --add 'v8' d8 ~/.jsvu/v8
+  ./node_modules/.bin/eshost --add 'xs' xs ~/.jsvu/xs
 
 script: |
   - which chakra
