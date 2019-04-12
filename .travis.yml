@@ -1,0 +1,29 @@
+---
+language: node_js
+node_js:
+  - 11
+dist: trusty
+sudo: false
+install: |
+
+  git clone https://github.com/devsnek/engine262.git;
+  cd engine262 && npm install && npm run build && npm link;
+  cd $TRAVIS_BUILD_DIR;
+  
+  npm install jsvu;
+  
+  export PATH="${HOME}/.jsvu:${PATH}"
+  
+  ./node_modules/.bin/jsvu --os=linux64 --engines=chakra,javascriptcore,spidermonkey,v8,xs
+  
+
+  #npm install --ignore-scripts
+
+script: |
+  - which chakra
+  - which engine262
+  - which javascriptcore
+  - which spidermonkey
+  - which v8
+  - which xs
+  
