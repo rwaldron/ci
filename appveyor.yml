@@ -29,18 +29,20 @@ install:
   - cd %ESHOST_PATH%
   - npm install --ignore-scripts
   - npm link
-  - set ESHOST_PATH_ENGINE262="C:\Users\appveyor\AppData\Roaming\npm\engine262.cmd"
-  - set ESHOST_PATH_CHAKRA="%USERPROFILE%\.jsvu\chakra.cmd"
-  - set ESHOST_PATH_JAVASCRIPTCORE="%USERPROFILE%\.jsvu\javascriptcore.cmd"
-  - set ESHOST_PATH_SPIDERMONKEY="%USERPROFILE%\.jsvu\spidermonkey.cmd"
-  - set ESHOST_PATH_V8="%USERPROFILE%\.jsvu\v8.cmd"
-  - set ESHOST_PATH_XS="%USERPROFILE%\.jsvu\xs.cmd"
-  - .\node_modules\.bin\eshost --add "chakra" ch "%ESHOST_PATH_CHAKRA%"
-  - .\node_modules\.bin\eshost --add "engine262" engine262 "%ESHOST_PATH_ENGINE262%"
-  - .\node_modules\.bin\eshost --add "javascriptcore" jsc "%ESHOST_PATH_JAVASCRIPTCORE%"
-  - .\node_modules\.bin\eshost --add "spidermonkey" jsshell "%ESHOST_PATH_SPIDERMONKEY%"
-  - .\node_modules\.bin\eshost --add "v8" d8 "%ESHOST_PATH_V8%"
-  - .\node_modules\.bin\eshost --add "xs" xs "%ESHOST_PATH_XS%"
+  # - cd C:\Users\appveyor\AppData\Roaming\npm\
+  - cmd: dir C:\Users\appveyor\AppData\Roaming\npm\
+  # - set ESHOST_PATH_ENGINE262="C:\Users\appveyor\AppData\Roaming\npm\engine262.cmd"
+  # - set ESHOST_PATH_CHAKRA="%USERPROFILE%\.jsvu\chakra.cmd"
+  # - set ESHOST_PATH_JAVASCRIPTCORE="%USERPROFILE%\.jsvu\javascriptcore.cmd"
+  # - set ESHOST_PATH_SPIDERMONKEY="%USERPROFILE%\.jsvu\spidermonkey.cmd"
+  # - set ESHOST_PATH_V8="%USERPROFILE%\.jsvu\v8.cmd"
+  # - set ESHOST_PATH_XS="%USERPROFILE%\.jsvu\xs.cmd"
+  # - .\node_modules\.bin\eshost --add "chakra" ch "%ESHOST_PATH_CHAKRA%"
+  # - .\node_modules\.bin\eshost --add "engine262" engine262 "%ESHOST_PATH_ENGINE262%"
+  # - .\node_modules\.bin\eshost --add "javascriptcore" jsc "%ESHOST_PATH_JAVASCRIPTCORE%"
+  # - .\node_modules\.bin\eshost --add "spidermonkey" jsshell "%ESHOST_PATH_SPIDERMONKEY%"
+  # - .\node_modules\.bin\eshost --add "v8" d8 "%ESHOST_PATH_V8%"
+  # - .\node_modules\.bin\eshost --add "xs" xs "%ESHOST_PATH_XS%"
 
   # export PATH="${HOME}/.jsvu:${PATH}";
 
