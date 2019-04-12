@@ -19,20 +19,34 @@ install: |
 
   npm install --ignore-scripts && npm link;
 
-  ./node_modules/.bin/eshost --add "chakra" ch ~/.jsvu/chakra;
-  ./node_modules/.bin/eshost --add "engine262" engine262 `which engine262`;
-  ./node_modules/.bin/eshost --add "javascriptcore" jsc ~/.jsvu/javascriptcore;
-  ./node_modules/.bin/eshost --add "spidermonkey" jsshell ~/.jsvu/spidermonkey;
-  ./node_modules/.bin/eshost --add "v8" d8 ~/.jsvu/v8;
-  ./node_modules/.bin/eshost --add "xs" xs ~/.jsvu/xs;
+  export ESHOST_PATH_CHAKRA=`which chakra`;
+  export ESHOST_PATH_ENGINE262=`which engine262`;
+  export ESHOST_PATH_JAVASCRIPTCORE=`which javascriptcore`;
+  export ESHOST_PATH_SPIDERMONKEY=`which spidermonkey`;
+  export ESHOST_PATH_V8=`which v8`;
+  export ESHOST_PATH_XS=`which xs`;
+
+  ./node_modules/.bin/eshost --add "chakra" ch $ESHOST_PATH_CHAKRA;
+  ./node_modules/.bin/eshost --add "engine262" engine262 $ESHOST_PATH_ENGINE262;
+  ./node_modules/.bin/eshost --add "javascriptcore" jsc $ESHOST_PATH_JAVASCRIPTCORE;
+  ./node_modules/.bin/eshost --add "spidermonkey" jsshell $ESHOST_PATH_SPIDERMONKEY;
+  ./node_modules/.bin/eshost --add "v8" d8 $ESHOST_PATH_V8;
+  ./node_modules/.bin/eshost --add "xs" xs $ESHOST_PATH_XS;
+
+  # ./node_modules/.bin/eshost --add "chakra" ch ~/.jsvu/chakra;
+  # ./node_modules/.bin/eshost --add "engine262" engine262 `which engine262`;
+  # ./node_modules/.bin/eshost --add "javascriptcore" jsc ~/.jsvu/javascriptcore;
+  # ./node_modules/.bin/eshost --add "spidermonkey" jsshell ~/.jsvu/spidermonkey;
+  # ./node_modules/.bin/eshost --add "v8" d8 ~/.jsvu/v8;
+  # ./node_modules/.bin/eshost --add "xs" xs ~/.jsvu/xs;
 
 script: |
-  which chakra;
-  which engine262;
-  which javascriptcore;
-  which spidermonkey;
-  which v8;
-  which xs;
+  # which chakra;
+  # which engine262;
+  # which javascriptcore;
+  # which spidermonkey;
+  # which v8;
+  # which xs;
 
 
   ./node_modules/.bin/eshost -e "1 + 1";
