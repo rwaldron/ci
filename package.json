@@ -7,7 +7,7 @@
     "test": "echo 'ok'"
   },
   "dependencies": {
-    "eshost": "6.0.0"
+    "eshost-cli": "git://github.com/bterlson/eshost-cli.git"
   },
   "repository": {
     "type": "git",
