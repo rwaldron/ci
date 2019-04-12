@@ -1,0 +1,79 @@
+version: "{build}"
+
+clone_depth: 1
+
+environment:
+  matrix:
+    # - nodejs_version: 10
+    - nodejs_version: 11
+
+platform:
+  # - x64
+  - x86
+
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - set ESHOST_PATH=%CD%
+  - mkdir hosts
+  # Engine262: Clone, Build, Link and set PATH
+  - mkdir engine262
+  - git clone https://github.com/devsnek/engine262.git engine262
+  - cd %CD%\engine262
+  - npm install
+  - npm run build
+  - npm link
+  - set ESHOST_ENGINE262_PATH=C:\Users\appveyor\AppData\Roaming\npm\
+  - set PATH=%PATH%;C:\Users\appveyor\AppData\Roaming\npm\
+  - where engine262
+  - cd %ESHOST_PATH%
+  - npm install --ignore-scripts && npm link;
+  - set ESHOST_PATH_ENGINE262="C:\Users\appveyor\AppData\Roaming\npm\engine262.cmd";
+  - set ESHOST_PATH_CHAKRA="%USERPROFILE%\.jsvu\chakra.cmd";
+  - set ESHOST_PATH_JAVASCRIPTCORE="%USERPROFILE%\.jsvu\javascriptcore.cmd";
+  - set ESHOST_PATH_SPIDERMONKEY="%USERPROFILE%\.jsvu\spidermonkey.cmd";
+  - set ESHOST_PATH_V8="%USERPROFILE%\.jsvu\v8.cmd";
+  - set ESHOST_PATH_XS="%USERPROFILE%\.jsvu\xs.cmd";
+  - .\node_modules\.bin\eshost --add "chakra" ch %ESHOST_PATH_CHAKRA%;
+  - .\node_modules\.bin\eshost --add "engine262" engine262 %ESHOST_PATH_ENGINE262%;
+  - .\node_modules\.bin\eshost --add "javascriptcore" jsc %ESHOST_PATH_JAVASCRIPTCORE%;
+  - .\node_modules\.bin\eshost --add "spidermonkey" jsshell %ESHOST_PATH_SPIDERMONKEY%;
+  - .\node_modules\.bin\eshost --add "v8" d8 %ESHOST_PATH_V8%;
+  - .\node_modules\.bin\eshost --add "xs" xs %ESHOST_PATH_XS%;
+
+  # export PATH="${HOME}/.jsvu:${PATH}";
+
+  # - set PATH=%PATH%;C:\Users\appveyor\AppData\Roaming\npm\
+
+
+  # # SpiderMonkey: Curl, Unzip and set PATH
+  # - mkdir spidermonkey
+  # - curl -fsS -o spidermonkey\jsshell-win64.zip https://archive.mozilla.org/pub/firefox/nightly/latest-mozilla-central/jsshell-win64.zip
+  # - 7z e -o%CD%\spidermonkey spidermonkey\jsshell-win64.zip
+  # - set PATH=%PATH%;%CD%\spidermonkey\
+  # - set ESHOST_JSSHELL_PATH=%CD%\spidermonkey\
+  # - where js
+  # # ChakraCore: Clone, Build and set PATH
+  # - mkdir chakracore
+  # - git clone https://github.com/Microsoft/ChakraCore.git chakracore
+  # - msbuild /p:Platform=%PLATFORM% /p:Configuration=Debug %CD%\chakracore\Build\Chakra.Core.sln
+  # - set PATH=%PATH%;%CD%\chakracore\Build\VcBuild\bin\%PLATFORM%_debug
+  # - cd %CD%\chakracore\Build\VcBuild\bin\%PLATFORM%_debug
+  # - where ch
+  # # Return to eshost dir
+  # - cd %ESHOST_PATH%
+  # - where node
+  # - echo %PATH%
+  # - node -v
+  # - npm install -g npm
+  # - npm install
+
+
+
+
+build: off
+
+test_script:
+  - cmd: .\node_modules\.bin\eshost -e "1 + 1";
+
+matrix:
+  fast_finish: true
