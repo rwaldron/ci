@@ -28,9 +28,11 @@ install:
   - where engine262
   - cd %ESHOST_PATH%
   - npm install --ignore-scripts
-  - npm link
+  # - npm link
   # - cd C:\Users\appveyor\AppData\Roaming\npm\
   - cmd: dir C:\Users\appveyor\AppData\Roaming\npm\
+  - cmd: dir %USERPROFILE%\
+
   # - set ESHOST_PATH_ENGINE262="C:\Users\appveyor\AppData\Roaming\npm\engine262.cmd"
   # - set ESHOST_PATH_CHAKRA="%USERPROFILE%\.jsvu\chakra.cmd"
   # - set ESHOST_PATH_JAVASCRIPTCORE="%USERPROFILE%\.jsvu\javascriptcore.cmd"
