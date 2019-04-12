@@ -29,18 +29,18 @@ install:
   - npm install --ignore-scripts
   # - npm link
   # - cd C:\Users\appveyor\AppData\Roaming\npm\
-  - .\node_modules\.bin\jsvu --os=win64 --engines="chakra,spidermonkey,v8,xs"
+  - cmd: .\node_modules\.bin\jsvu --os=win64 --engines="chakra,spidermonkey,v8,xs"
 
   - cmd: dir C:\Users\appveyor\AppData\Roaming\npm\
   - cmd: dir %USERPROFILE%\.jsvu\
 
   - set PATH=%PATH%;%USERPROFILE%\.jsvu\
 
-  - set ESHOST_PATH_ENGINE262="C:\Users\appveyor\AppData\Roaming\npm\engine262.cmd"
-  - set ESHOST_PATH_CHAKRA="%USERPROFILE%\.jsvu\engines\chakra\chakra.exe"
-  - set ESHOST_PATH_SPIDERMONKEY="%USERPROFILE%\.jsvu\engines\spidermonkey\spidermonkey.exe"
-  - set ESHOST_PATH_V8="%USERPROFILE%\.jsvu\engines\v8\v8.exe"
-  - set ESHOST_PATH_XS="%USERPROFILE%\.jsvu\engines\xs\xs.exe"
+  - set ESHOST_PATH_ENGINE262=C:\Users\appveyor\AppData\Roaming\npm\engine262.cmd
+  - set ESHOST_PATH_CHAKRA=%USERPROFILE%\.jsvu\engines\chakra\chakra.exe
+  - set ESHOST_PATH_SPIDERMONKEY=%USERPROFILE%\.jsvu\engines\spidermonkey\spidermonkey.exe
+  - set ESHOST_PATH_V8=%USERPROFILE%\.jsvu\engines\v8\v8.exe
+  - set ESHOST_PATH_XS=%USERPROFILE%\.jsvu\engines\xs\xs.exe
 
   - cmd: .\node_modules\.bin\eshost --add "chakra" ch %ESHOST_PATH_CHAKRA%
   - cmd: .\node_modules\.bin\eshost --add "engine262" engine262 %ESHOST_PATH_ENGINE262%
