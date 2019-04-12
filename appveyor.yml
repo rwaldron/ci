@@ -42,11 +42,11 @@ install:
   - set ESHOST_PATH_V8="%USERPROFILE%\.jsvu\v8.cmd"
   - set ESHOST_PATH_XS="%USERPROFILE%\.jsvu\xs.cmd"
 
-  - .\node_modules\.bin\eshost --add "chakra" ch %ESHOST_PATH_CHAKRA%
-  - .\node_modules\.bin\eshost --add "engine262" engine262 %ESHOST_PATH_ENGINE262%
-  - .\node_modules\.bin\eshost --add "spidermonkey" jsshell %ESHOST_PATH_SPIDERMONKEY%
-  - .\node_modules\.bin\eshost --add "v8" d8 %ESHOST_PATH_V8%
-  - .\node_modules\.bin\eshost --add "xs" xs %ESHOST_PATH_XS%
+  - cmd: .\node_modules\.bin\eshost --add "chakra" ch %ESHOST_PATH_CHAKRA%
+  - cmd: .\node_modules\.bin\eshost --add "engine262" engine262 %ESHOST_PATH_ENGINE262%
+  - cmd: .\node_modules\.bin\eshost --add "spidermonkey" jsshell %ESHOST_PATH_SPIDERMONKEY%
+  - cmd: .\node_modules\.bin\eshost --add "v8" d8 %ESHOST_PATH_V8%
+  - cmd: .\node_modules\.bin\eshost --add "xs" xs %ESHOST_PATH_XS%
 
   - cat C:\Users\appveyor\.eshost-config.json
 
@@ -83,7 +83,7 @@ install:
 build: off
 
 test_script:
-  - .\node_modules\.bin\eshost -e "1 + 1;"
+  - cmd: .\node_modules\.bin\eshost -e "1 + 1;"
 
 matrix:
   fast_finish: true
