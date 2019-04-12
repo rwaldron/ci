@@ -4,10 +4,11 @@
   "description": "CI stuff",
   "main": "index.js",
   "scripts": {
-    "test": "echo 'ok'"
+    "install": "echo 'ok'"
   },
   "dependencies": {
-    "eshost-cli": "git://github.com/bterlson/eshost-cli.git"
+    "eshost-cli": "git://github.com/bterlson/eshost-cli.git",
+    "jsvu": "^1.7.1"
   },
   "repository": {
     "type": "git",
