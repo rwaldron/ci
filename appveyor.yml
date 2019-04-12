@@ -48,7 +48,10 @@ install:
   - cmd: .\node_modules\.bin\eshost --add "v8" d8 %ESHOST_PATH_V8%
   - cmd: .\node_modules\.bin\eshost --add "xs" xs %ESHOST_PATH_XS%
 
-  - cat C:\Users\appveyor\.eshost-config.json
+  - cat %USERPROFILE%\.jsvu\chakra.cmd
+  - cat %USERPROFILE%\.jsvu\spidermonkey.cmd
+  - cat %USERPROFILE%\.jsvu\v8.cmd
+  - cat %USERPROFILE%\.jsvu\xs.cmd
 
   # export PATH="${HOME}/.jsvu:${PATH}";
 
