@@ -26,11 +26,14 @@ install: |
   ./node_modules/.bin/eshost --add "v8" d8 ~/.jsvu/v8;
   ./node_modules/.bin/eshost --add "xs" xs ~/.jsvu/xs;
 
-script:
-  - which chakra
-  - which engine262
-  - which javascriptcore
-  - which spidermonkey
-  - which v8
-  - which xs
+script: |
+  which chakra;
+  which engine262;
+  which javascriptcore;
+  which spidermonkey;
+  which v8;
+  which xs;
+
+
+  ./node_modules/.bin/eshost -e "1 + 1";
 
