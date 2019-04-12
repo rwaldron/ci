@@ -80,7 +80,7 @@ install:
 build: off
 
 test_script:
-  - cmd: .\node_modules\.bin\eshost -e "1 + 1";
+  - cmd: .\node_modules\.bin\eshost -e "1 + 1;"
 
 matrix:
   fast_finish: true
