@@ -48,6 +48,8 @@ install:
   - .\node_modules\.bin\eshost --add "v8" d8 %ESHOST_PATH_V8%
   - .\node_modules\.bin\eshost --add "xs" xs %ESHOST_PATH_XS%
 
+  - cat C:\Users\appveyor\.eshost-config.json
+
   # export PATH="${HOME}/.jsvu:${PATH}";
 
   # - set PATH=%PATH%;C:\Users\appveyor\AppData\Roaming\npm\
