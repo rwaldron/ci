@@ -24,6 +24,7 @@ install:
   - npm link
   - set ESHOST_ENGINE262_PATH=C:\Users\appveyor\AppData\Roaming\npm\
   - set PATH=%PATH%;C:\Users\appveyor\AppData\Roaming\npm\
+  - set PATH=%PATH%;%USERPROFILE%\.jsvu\
   - where engine262
   - cd %ESHOST_PATH%
   - npm install --ignore-scripts
@@ -34,12 +35,12 @@ install:
   - set ESHOST_PATH_SPIDERMONKEY="%USERPROFILE%\.jsvu\spidermonkey.cmd"
   - set ESHOST_PATH_V8="%USERPROFILE%\.jsvu\v8.cmd"
   - set ESHOST_PATH_XS="%USERPROFILE%\.jsvu\xs.cmd"
-  - .\node_modules\.bin\eshost --add "chakra" ch %ESHOST_PATH_CHAKRA%
-  - .\node_modules\.bin\eshost --add "engine262" engine262 %ESHOST_PATH_ENGINE262%
-  - .\node_modules\.bin\eshost --add "javascriptcore" jsc %ESHOST_PATH_JAVASCRIPTCORE%
-  - .\node_modules\.bin\eshost --add "spidermonkey" jsshell %ESHOST_PATH_SPIDERMONKEY%
-  - .\node_modules\.bin\eshost --add "v8" d8 %ESHOST_PATH_V8%
-  - .\node_modules\.bin\eshost --add "xs" xs %ESHOST_PATH_XS%
+  - .\node_modules\.bin\eshost --add "chakra" ch "%ESHOST_PATH_CHAKRA%"
+  - .\node_modules\.bin\eshost --add "engine262" engine262 "%ESHOST_PATH_ENGINE262%"
+  - .\node_modules\.bin\eshost --add "javascriptcore" jsc "%ESHOST_PATH_JAVASCRIPTCORE%"
+  - .\node_modules\.bin\eshost --add "spidermonkey" jsshell "%ESHOST_PATH_SPIDERMONKEY%"
+  - .\node_modules\.bin\eshost --add "v8" d8 "%ESHOST_PATH_V8%"
+  - .\node_modules\.bin\eshost --add "xs" xs "%ESHOST_PATH_XS%"
 
   # export PATH="${HOME}/.jsvu:${PATH}";
 
