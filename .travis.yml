@@ -18,12 +18,12 @@ install: |
   
   npm install --ignore-scripts
 
-  ./node_modules/.bin/eshost --add 'chakra' ch ~/.jsvu/chakra
-  ./node_modules/.bin/eshost --add 'engine262' engine262 `which engine262`
-  ./node_modules/.bin/eshost --add 'javascriptcore' jsc ~/.jsvu/javascriptcore
-  ./node_modules/.bin/eshost --add 'spidermonkey' jsshell ~/.jsvu/spidermonkey
-  ./node_modules/.bin/eshost --add 'v8' d8 ~/.jsvu/v8
-  ./node_modules/.bin/eshost --add 'xs' xs ~/.jsvu/xs
+  ./node_modules/.bin/eshost --add "chakra" ch ~/.jsvu/chakra
+  ./node_modules/.bin/eshost --add "engine262" engine262 `which engine262`
+  ./node_modules/.bin/eshost --add "javascriptcore" jsc ~/.jsvu/javascriptcore
+  ./node_modules/.bin/eshost --add "spidermonkey" jsshell ~/.jsvu/spidermonkey
+  ./node_modules/.bin/eshost --add "v8" d8 ~/.jsvu/v8
+  ./node_modules/.bin/eshost --add "xs" xs ~/.jsvu/xs
 
 script:
   - which chakra
