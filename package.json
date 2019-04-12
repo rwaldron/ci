@@ -1,0 +1,16 @@
+{
+  "name": "ci",
+  "version": "0.0.0",
+  "description": "CI stuff",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'ok'"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rwaldron/ci"
+  },
+  "author": "Rick Waldron",
+  "license": "MIT"
+}
