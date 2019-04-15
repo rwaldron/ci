@@ -53,6 +53,8 @@ install:
   - cat %USERPROFILE%\.jsvu\v8.cmd
   - cat %USERPROFILE%\.jsvu\xs.cmd
 
+  - cat %USERPROFILE%\.jsvu\engines\chakra\chakra.exe
+
   # export PATH="${HOME}/.jsvu:${PATH}";
 
   # - set PATH=%PATH%;C:\Users\appveyor\AppData\Roaming\npm\
@@ -86,7 +88,7 @@ install:
 build: off
 
 test_script:
-  - cmd: .\node_modules\.bin\eshost -e "1 + 1;"
+  - cmd: .\node_modules\.bin\eshost -e "1 + 1"
 
 matrix:
   fast_finish: true
