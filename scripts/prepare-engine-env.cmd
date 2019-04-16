@@ -1,6 +1,5 @@
 set ESHOST_PATH = Get-Location
 mkdir hosts
-# Engine262: Clone, Build, Link and set PATH
 mkdir engine262
 git clone https://github.com/devsnek/engine262.git engine262
 cd %ESHOST_PATH%\engine262
@@ -12,8 +11,6 @@ where engine262
 set ESHOST_ENGINE262_PATH = (where engine262) | Out-String
 
 cd %ESHOST_PATH%
-# npm install --ignore-scripts
-# - npm link
 
 npm install -g jsvu eshost-cli
 
