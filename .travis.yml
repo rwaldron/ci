@@ -8,5 +8,6 @@ install:
   - ./scripts/prepare-engine-env.sh;
 
 script:
+  - eshost --list;
   - eshost -e "1 + 1";
 
