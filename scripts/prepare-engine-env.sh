@@ -4,7 +4,7 @@ git clone https://github.com/devsnek/engine262.git;
 cd engine262 && npm install && npm run build && npm link;
 cd $TRAVIS_BUILD_DIR;
 
-npm install -g jsvu eshost
+npm install -g jsvu eshost-cli
 
 # npm install --ignore-scripts && npm link;
 

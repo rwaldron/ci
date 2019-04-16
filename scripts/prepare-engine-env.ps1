@@ -17,7 +17,7 @@ cd $Env:ESHOST_PATH
 # npm install --ignore-scripts
 # - npm link
 
-npm install -g jsvu eshost
+npm install -g jsvu eshost-cli
 
 jsvu --os=win64 --engines="chakra,spidermonkey,v8,xs"
 
