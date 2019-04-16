@@ -6,10 +6,7 @@
   "scripts": {
     "install": "echo 'ok'"
   },
-  "dependencies": {
-    "eshost-cli": "git://github.com/bterlson/eshost-cli.git#support-mjs-extension",
-    "jsvu": "^1.7.1"
-  },
+  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/rwaldron/ci"
