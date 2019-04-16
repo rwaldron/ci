@@ -28,6 +28,8 @@ npm install -g jsvu eshost-cli
 
 jsvu --os=win64 --engines="chakra,spidermonkey,v8,xs"
 
+echo %ESHOST_ENGINE262_PATH%
+echo %ESHOST_NODE_PATH%
 
 set PATH="%PATH%;%USERPROFILE%\.jsvu\"
 set ESHOST_PATH_CHAKRA="%USERPROFILE%\.jsvu\chakra.cmd"
