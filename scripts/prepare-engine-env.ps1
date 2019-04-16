@@ -7,9 +7,12 @@ cd $Env:ESHOST_PATH\engine262
 npm install
 npm run build
 npm link
-$Env:ESHOST_ENGINE262_PATH="C:\Users\appveyor\AppData\Roaming\npm\"
-$Env:PATH="$Env:PATH;C:\Users\appveyor\AppData\Roaming\npm\"
+# $Env:ESHOST_ENGINE262_PATH="C:\Users\appveyor\AppData\Roaming\npm\"
+# $Env:PATH="$Env:PATH;C:\Users\appveyor\AppData\Roaming\npm\"
 where engine262
+
+$Env:ESHOST_ENGINE262_PATH = (where engine262) | Out-String
+
 cd $Env:ESHOST_PATH
 # npm install --ignore-scripts
 # - npm link
