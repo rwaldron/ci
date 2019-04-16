@@ -4,10 +4,9 @@ node_js:
   - 11
 dist: trusty
 sudo: false
-install: |
-  ./scripts/prepare-engine-env.sh;
-  eshost --list
+install:
+  - ./scripts/prepare-engine-env.sh;
 
-script: |
-  eshost -e "1 + 1";
+script:
+  - eshost -e "1 + 1";
 

@@ -36,3 +36,5 @@ eshost --add "engine262" engine262 $Env:ESHOST_PATH_ENGINE262
 eshost --add "spidermonkey" jsshell $Env:ESHOST_PATH_SPIDERMONKEY
 eshost --add "v8" d8 $Env:ESHOST_PATH_V8
 eshost --add "xs" xs $Env:ESHOST_PATH_XS
+
+eshost --list

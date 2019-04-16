@@ -4,7 +4,6 @@ clone_depth: 1
 
 environment:
   matrix:
-    # - nodejs_version: 10
     - nodejs_version: 11
 
 platform:
@@ -14,12 +13,11 @@ platform:
 install:
   - ps: Install-Product node $env:nodejs_version
   - ps: .\scripts\prepare-engine-env.ps1
-  - cmd: eshost --list
 
 build: off
 
 test_script:
-  - cmd: eshost -e "1 + 1"
+  - ps: eshost -e "1 + 1"
 
 matrix:
   fast_finish: true
