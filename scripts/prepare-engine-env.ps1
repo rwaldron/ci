@@ -1,8 +1,5 @@
 $Env:ESHOST_PATH = Get-Location
-mkdir hosts
-# Engine262: Clone, Build, Link and set PATH
-mkdir engine262
-git clone https://github.com/devsnek/engine262.git engine262
+git clone https://github.com/devsnek/engine262.git
 cd $Env:ESHOST_PATH\engine262
 npm install
 npm run build

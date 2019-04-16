@@ -1,11 +1,15 @@
 set ESHOST_PATH = %CD%
-mkdir hosts
-mkdir engine262
-git clone https://github.com/devsnek/engine262.git engine262
-cd %ESHOST_PATH%\engine262
-npm install
-npm run build
-npm link
+
+if exist "%CD%\engine262" (echo "%CD%\engine262 exists")
+else ( git clone https://github.com/devsnek/engine262.git && cd %ESHOST_PATH%\engine262 && npm install && npm run build && npm link )
+
+rem mkdir hosts
+rem mkdir engine262
+rem git clone https://github.com/devsnek/engine262.git engine262
+rem cd %ESHOST_PATH%\engine262
+rem npm install
+rem npm run build
+rem npm link
 
 where engine262
 set ESHOST_ENGINE262_PATH = (where engine262)
