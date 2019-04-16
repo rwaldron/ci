@@ -1,4 +1,4 @@
-set ESHOST_PATH = Get-Location
+set ESHOST_PATH = %CD%
 mkdir hosts
 mkdir engine262
 git clone https://github.com/devsnek/engine262.git engine262
