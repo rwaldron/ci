@@ -1,17 +1,17 @@
-set ESHOST_PATH = %CD%
+set CI_BUILD_DIR = %CD%
 
-if exist "%CD%\engine262" (
-  echo "%CD%\engine262 exists"
+if exist "%CI_BUILD_DIR%\engine262" (
+  echo "%CI_BUILD_DIR%\engine262 exists"
 ) else (
   git clone https://github.com/devsnek/engine262.git
-  cd %ESHOST_PATH%\engine262
+  cd %CI_BUILD_DIR%\engine262
   npm install
   npm run build
   npm link
   rem mkdir hosts
   rem mkdir engine262
   rem git clone https://github.com/devsnek/engine262.git engine262
-  rem cd %ESHOST_PATH%\engine262
+  rem cd %CI_BUILD_DIR%\engine262
   rem npm install
   rem npm run build
   rem npm link
@@ -20,7 +20,7 @@ if exist "%CD%\engine262" (
   set ESHOST_ENGINE262_PATH = (where engine262)
   set ESHOST_NODE_PATH = (where node)
 
-  cd %ESHOST_PATH%
+  cd %CI_BUILD_DIR%
 
   npm install -g jsvu eshost-cli
 

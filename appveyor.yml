@@ -12,13 +12,13 @@ platform:
 
 install:
   - ps: Install-Product node $env:nodejs_version
-  - ps: .\scripts\prepare-engine-env.ps1
+  # - ps: .\scripts\prepare-engine-env.ps1
   - cmd: .\scripts\prepare-engine-env.cmd
 
 build: off
 
 test_script:
-  - ps: eshost -e "1 + 1"
+  # - ps: eshost -e "1 + 1"
   - cmd: eshost -e "1 + 1"
 
 matrix:

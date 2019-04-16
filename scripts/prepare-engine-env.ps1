@@ -1,6 +1,6 @@
-$Env:ESHOST_PATH = Get-Location
+$Env:CI_BUILD_DIR = Get-Location
 git clone https://github.com/devsnek/engine262.git
-cd $Env:ESHOST_PATH\engine262
+cd $Env:CI_BUILD_DIR\engine262
 npm install
 npm run build
 npm link
@@ -8,10 +8,11 @@ npm link
 # $Env:PATH="$Env:PATH;C:\Users\appveyor\AppData\Roaming\npm\"
 where engine262
 
+# TODO: Move these to assignments below
 $Env:ESHOST_ENGINE262_PATH = (where engine262) | Out-String
 $Env:ESHOST_NODE_PATH = (where node) | Out-String
 
-cd $Env:ESHOST_PATH
+cd $Env:CI_BUILD_DIR
 # npm install --ignore-scripts
 # - npm link
 
