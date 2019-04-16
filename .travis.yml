@@ -6,8 +6,8 @@ dist: trusty
 sudo: false
 install: |
   ./scripts/prepare-engine-env.sh;
-  ./node_modules/.bin/eshost --list
+  eshost --list
 
 script: |
-  ./node_modules/.bin/eshost -e "1 + 1";
+  eshost -e "1 + 1";
 

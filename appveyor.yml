@@ -14,12 +14,12 @@ platform:
 install:
   - ps: Install-Product node $env:nodejs_version
   - ps: .\scripts\prepare-engine-env.ps1
-  - cmd: .\node_modules\.bin\eshost --list
+  - cmd: eshost --list
 
 build: off
 
 test_script:
-  - cmd: .\node_modules\.bin\eshost -e "1 + 1"
+  - cmd: eshost -e "1 + 1"
 
 matrix:
   fast_finish: true
