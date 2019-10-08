@@ -4,8 +4,6 @@ cd $Env:CI_BUILD_DIR\engine262
 npm install
 npm run build
 npm link
-# where engine262
-# $Env:ESHOST_ENGINE262_PATH = (where engine262) | Out-String
 
 cd $Env:CI_BUILD_DIR
 
@@ -15,9 +13,6 @@ jsvu --os=win64 --engines="chakra,spidermonkey,v8,xs"
 
 $Env:PATH="$Env:PATH;$Env:USERPROFILE\.jsvu\"
 $Env:ESHOST_PATH_CHAKRA="$Env:USERPROFILE\.jsvu\chakra.cmd"
-# $Env:ESHOST_PATH_ENGINE262="$engine262.cmd"
-# echo $Env:ESHOST_ENGINE262_PATH
-# $Env:ESHOST_PATH_ENGINE262="C:\Users\appveyor\AppData\Roaming\npm\engine262.cmd"
 $Env:ESHOST_PATH_ENGINE262=(get-command engine262).Path
 $Env:ESHOST_PATH_NODE=(get-command node).Path
 $Env:ESHOST_PATH_SPIDERMONKEY="$Env:USERPROFILE\.jsvu\spidermonkey.cmd"
