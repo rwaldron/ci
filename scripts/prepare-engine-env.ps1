@@ -9,7 +9,7 @@ cd $Env:CI_BUILD_DIR
 
 npm install -g jsvu eshost-cli
 
-jsvu --os=win64 --engines="chakra,spidermonkey,v8,xs"
+jsvu --os=win64 --engines="all"
 
 $Env:PATH="$Env:PATH;$Env:USERPROFILE\.jsvu\"
 $Env:ESHOST_PATH_CHAKRA="$Env:USERPROFILE\.jsvu\chakra.cmd"
